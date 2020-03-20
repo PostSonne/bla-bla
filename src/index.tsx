@@ -4,8 +4,9 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
+import reducer from "./store/reducers/reducer";
 
-interface ITrackItem {
+export interface ITrackItem {
     index: string,
     image: string,
     isLoved: boolean,
@@ -32,7 +33,7 @@ const getItems = (Tracks: ITrackItem[]) => {
     return Items;
 };
 
-let Tracks = [
+export const Tracks = [
     {
         "index" : "1",
         "image" : "",

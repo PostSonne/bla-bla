@@ -11,9 +11,6 @@ function setState(state, newState) {
     return state.merge(newState);
 }
 
-function markerClick(state, marker) {
-    return state
-}
 
 function changeFilter(state, filter) {
     let filterIndex = getFilterIndex(state,filter)
@@ -29,8 +26,6 @@ export default function(state = Map(), action) {
             return setState(state, action.state);
         case "CHANGE_FILTER":
             return changeFilter(state, action.filter);
-        case "MARKER_CLICK":
-            return markerClick(state, action.marker)
         default:
             return state
     }
