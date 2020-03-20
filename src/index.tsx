@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App, { TracksFilterApp } from "./App";
+import { TracksFilterApp } from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
@@ -49,12 +49,10 @@ function setItems(Items: ITrackItem[]) {
         type: "SET_STATE",
         state: {
             filters: [
-                {id: "shower", inuse: false },
-                {id: "pets", inuse: false },
-                {id: "flush", inuse: false },
-                {id: "water", inuse: false }
+                {id: "hasImage", inuse: false },
+                {id: "liked", inuse: false },
+                {id: "hasArtist", inuse: false },
             ],
-            markers: Items,
             campgrounds: Items
         }
     })
