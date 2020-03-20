@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import App, { TracksFilterApp } from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import reducer from "./store/reducers/reducer";
 
 export interface ITrackItem {
-    index: string,
-    image: string,
-    isLoved: boolean,
-    trackName: string,
-    artist: string,
-    listeningCounter: number,
+    index?: string,
+    image?: string,
+    isLoved?: boolean,
+    trackName?: string,
+    artist?: string,
+    listeningCounter?: number,
 }
 
 const AppStore = createStore(reducer);
@@ -64,7 +64,7 @@ setItems(getItems(Tracks));
 
 ReactDOM.render(
     <Provider store={AppStore}>
-        <App />
+        <TracksFilterApp />
     </Provider>,
     document.getElementById("root")
 );
