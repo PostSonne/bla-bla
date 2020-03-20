@@ -1,6 +1,3 @@
-
-
-
 function getFilterIndex<T>(state: T, itemId: number) {
     return state.get("filters").findIndex(
         (item) => item.get("id") === itemId
