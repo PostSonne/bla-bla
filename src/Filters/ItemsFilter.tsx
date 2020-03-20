@@ -5,7 +5,7 @@ const ItemsFilter: FC = () => {
         <div className="col-sm-2">
             <input type="checkbox"
                    className="toggle"
-                   id={this.props.id}
+                   id={id}
                    defaultChecked={this.props.inuse}
                    onClick={() => this.props.changeFilter(this.props.id)}
             />
