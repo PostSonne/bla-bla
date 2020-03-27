@@ -2,20 +2,28 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import FirstFilter, { IFirstFilter } from "./Filters/FirstFIlter";
 import SecondFilter, { ISecondFilter } from "./Filters/SecondFilter";
+import { ITrackItem } from "./index";
 
 interface IAppProps {
-    tracks: object[];
+    tracks: ITrackItem[];
 }
 
-const GoodsList = ({ goods }) => (
-    <div>
-        {goods.map(n => (
-            <Block className="good" HeaderTag="h3" headerText={n.name} key={n.id}>
-                <img src={n.image} />
-            </Block>
-        ))}
-    </div>
-);
+const TrackCards: FC<IAppProps> = ({
+    tracks
+}) => {
+    return (
+        <>
+            <div>
+                {tracks.map(
+                    item => (
+                        <div className="good">
+                            <img src={n.image}/>
+                        </div>
+                    ))}
+            </div>
+        </>
+    );
+};
 
 const App: FC<IAppProps> = ({
     tracks,
