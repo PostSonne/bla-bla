@@ -1,36 +1,50 @@
-import React from "react";
-import ItemsFiltersList from "./Filters/ItemsFiltersList";
-import TrackList from "./Components/TrackList";
-import { connect } from "react-redux";
-import { changeFilter } from "./store/actions/action";
-const App = () =>{
+import React, { FC } from "react";
+import styled from "styled-components";
+import FirstFilter, { IFirstFilter } from "./Filters/FirstFIlter";
+import SecondFilter, { ISecondFilter } from "./Filters/SecondFilter";
+import { ITrackItem } from "./index";
+
+interface IAppProps {
+    tracks: ITrackItem[];
+}
+
+const TrackCards: FC<IAppProps> = ({
+    tracks
+}) => {
+    return (
+        <>
+            <div>
+                {tracks.map(
+                    item => (
+                        <div className="good">
+                            <img src={n.image}/>
+                        </div>
+                    ))}
+            </div>
+        </>
+    );
+};
+
+const App: FC<IAppProps> = ({
+    tracks,
+}) => {
+  const countries = React.useMemo(() =>
+      [...new Set(tracks.map(n => n.value))],
+      [ tracks ]
+  );
+
+
   return (
-      <div className="container">
-        <ItemsFiltersList/>
-        <TrackList/>
-  
+      <div>
+        <div className="filters">
+          <FirstFilter
+          />
+          <SecondFilter
+              value={size}
+          />
+        </div>
       </div>
   );
 };
 
-
-function mapStateToProps(state: []) {
-  // const filters = state("filters");
-  // const campgrounds = state("campgrounds");
-  // const filtered_campgrounds = campgrounds;
-  // const active_filters = filters.filter(
-  //     // item => item.get("inuse") === true
-  // );
-  /*active_filters.forEach(filter => {
-    filtered_campgrounds = filtered_campgrounds.filter(
-        item => item.get("properties").get(filter.get("id")) === true
-    )
-  });*/
-
-  return {
-    // filters: filters,
-    // campgrounds: filtered_campgrounds
-  };
-}
-
-export const TracksFilterApp = connect(mapStateToProps, changeFilter)(App);
+export default App;

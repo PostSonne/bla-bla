@@ -1,0 +1,21 @@
+{
+  "tracks":
+  [
+    {
+      "index": "1",
+      "image" : "",
+      "isLoved" : true,
+      "trackName" : "",
+      "artist" : "",
+      "listeningCounter" : 125
+    },
+    {
+      "index": "2",
+      "image" : "",
+      "isLoved" : false,
+      "trackName" : "",
+      "artist" : "",
+      "listeningCounter" : 100
+    }
+  ]
+}
